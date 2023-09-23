@@ -1,0 +1,15 @@
+{
+  "name": "mozza.time.error",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "./index.ts",
+  "scripts": {
+    "build": "swc --config-file ../../.swcrc -d dist ./*.ts"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^10.1.2",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1"
+  }
+}

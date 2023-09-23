@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model TimerSequence {
+  id String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+  name String
+
+  durations Int[]
+}
+
+model Timer {
+  id String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+  startedAt DateTime @map("started_at")
+  endedAt DateTime? @map("ended_at")
+  duration Int
+
+  pauses TimerPause[] @relation(fields: [])
+
+  @@map("timer")
+}
+
+model TimerPause {
+  id String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+  startedAt DateTime @map("started_at")
+  endedAt DateTime? @map("ended_at")
+
+  timerId String @db.Uuid @map("timer_id")
+  timer Timer @relation(fields: [timerId], references: [id])
+}

@@ -1,0 +1,11 @@
+{
+  "entryFile": "packages/mozza.time.main/main",
+  "compilerOptions": {
+    "builder": {
+      "type": "swc",
+      "options": {
+        "swcrcPath": ".swcrc"
+      }
+    }
+  }
+}

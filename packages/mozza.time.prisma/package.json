@@ -1,0 +1,19 @@
+{
+  "name": "mozza.time.prisma",
+  "version": "0.0.0",
+  "types": "index.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "swc --config-file ../../.swcrc -d dist ./*.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.1.2",
+    "@nestjs/core": "^10.1.2",
+    "@nestjs/cqrs": "^10.0.3",
+    "@prisma/client": "^5.0.0",
+    "mozza.time.infra-core": "workspace:*",
+    "prisma": "^5.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1"
+  }
+}
